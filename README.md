@@ -142,3 +142,39 @@ module.exports = {
 };
 ```
 
+Correct example app file `/client/src/main.js` (add `router`)
+```
+import router from './router';
+...
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount('#app');
+```
+
+Install and connect `vuetify`
+```
+client $ yarn add vuetify
+```
+```
+/* /client/src/main.js */
+
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
+
+Vue.use(Vuetify);
+
+```
+```
+/* /client/public/index.html */
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+```
+
+Create Landing page view `/client/src/views/Landing.vue` from Vuetify free
+pre-made theme  `parallax template` and add it to the router instead of
+the view `Home`.
+
+Create Login view `/client/src/views/Login.vue` and Sign Up view
+`/client/src/views/SignUp.vue`, then add them to the router.
+
